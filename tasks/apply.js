@@ -51,6 +51,7 @@ module.exports = function(grunt) {
             /**
              * Write file and done();
              */
+            grunt.log.writeln('Applied ' + (file.dest).cyan +' OK'.green);
             grunt.file.write(file.dest, jsdom.serializeDocument(window.document));
             process.nextTick(next);
           }
@@ -61,9 +62,11 @@ module.exports = function(grunt) {
        */
       function (err) {
         if (err) {
+          grunt.log.error();
           grunt.warn(err);
+          done(false);
+          return;
         }
-
         done();
       }
     );
