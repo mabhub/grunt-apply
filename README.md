@@ -71,6 +71,28 @@ grunt.initConfig({
 });
 ```
 
+#### src/html/test.html
+```html
+<html>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	<script>
+		document.body.className = "custom";
+		document.querySelector('p').innerHTML += ' Adipisci, numquam, quibusdam.';
+	</script>
+</body>
+</html>
+```
+
+#### dist/test.html
+```html
+<html>
+<body class="custom">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, numquam, quibusdam.</p>
+</body>
+</html>
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
